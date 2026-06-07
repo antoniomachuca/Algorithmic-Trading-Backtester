@@ -1,0 +1,109 @@
+@startuml
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+
+
+package "Core Domain (src/core/)" {
+    
+    interface IFrictionModel <<Interface>> {
+        + calculate_friction(prices: pandas.DataFrame, signals: pandas.Series[int]): pandas.Series[float]
+    }
+
+    interface IStrategy <<Interface>> {
+        + calculate_signals(data: pandas.DataFrame): pandas.Series[int]
+    }
+
+    class SMAStrategy {
+        - short_window: int
+        - long_window: int
+        + calculate_signals(data: pandas.DataFrame): pandas.Series[int]
+    }
+    
+    class MomentumStrategy {
+        - period: int
+        + calculate_signals(data: pandas.DataFrame): pandas.Series[int]
+    }
+
+    IStrategy <|.. SMAStrategy
+    IStrategy <|.. MomentumStrategy
+
+    class Portfolio <<Aggregate Root>> {
+        - initial_capital: float
+        - positions: pandas.DataFrame
+        - equity_curve: pandas.Series[float]
+        - friction_model: IFrictionModel
+        + update_from_signals(signals: pandas.Series[int], prices: pandas.DataFrame): void
+        + get_equity_curve(): pandas.Series[float]
+    }
+
+    class Performance <<Value Object / Domain Service>> {
+        + calculate_sharpe_ratio(returns: pandas.Series[float], risk_free_rate: float): float
+        + calculate_max_drawdown(equity_curve: pandas.Series[float]): float
+        + calculate_annualized_volatility(returns: pandas.Series[float]): float
+        + calculate_cagr(equity_curve: pandas.Series[float]): float
+    }
+
+    Portfolio .right.> Performance : "calculates metrics >"
+}
+
+package "Data Infrastructure (Ports & Adapters)" {
+    
+    interface IDataHandler <<Port>> {
+        + load_data(symbol: str): pandas.DataFrame
+    }
+
+    class HDF5DataHandler <<Adapter>> {
+        - file_path: str
+        + load_data(symbol: str): pandas.DataFrame
+    }
+    
+    class ParquetDataHandler <<Adapter>> {
+        - file_path: str
+        + load_data(symbol: str): pandas.DataFrame
+    }
+
+    class BloombergDataHandler <<Adapter>> {
+        - api_connection: BloombergAPI
+        + load_data(symbol: str): pandas.DataFrame
+    }
+
+    IDataHandler <|.. HDF5DataHandler
+    IDataHandler <|.. ParquetDataHandler
+    IDataHandler <|.. BloombergDataHandler
+}
+
+package "Application Layer" {
+    class BacktestEngine {
+        - data_handler: IDataHandler
+        - strategy: IStrategy
+        - portfolio: Portfolio
+        + run_backtest(symbol: str): void
+    }
+}
+
+' Dependency Inversion Principle (DIP) and Ports & Adapters
+BacktestEngine o-- IDataHandler : ""
+BacktestEngine o-- IStrategy :    ""
+BacktestEngine o-- Portfolio : "Manages"
+Portfolio o-- IFrictionModel : ""
+
+note bottom of IDataHandler
+  **Dependency Inversion Principle (DIP)**
+  The Core does not depend on implementation details 
+  (HDF5, Parquet, or Bloomberg), but on abstractions (IDataHandler).
+end note
+
+note right of IStrategy
+  **Open-Closed Principle (OCP)**
+  New strategies can be added without
+  modifying the engine (BacktestEngine).
+end note
+
+note bottom of Portfolio
+  **Strict Vectorization**
+  State variables and returns are 
+  DataFrames for O(1) asymptotic complexity.
+end note
+@enduml
