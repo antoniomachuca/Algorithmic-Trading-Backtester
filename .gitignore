@@ -12,6 +12,9 @@ env/
 # Data
 data/*
 !data/.keep
+*.parquet
+*.csv
+*.hdf5
 
 # Jupyter Notebook
 .ipynb_checkpoints

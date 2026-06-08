@@ -7,6 +7,7 @@ A vectorized backtesting engine for evaluating algorithmic trading strategies us
 - `src/`: Core implementation containing data loaders, strategies, backtesting engine, and performance metrics.
 - `docs/architecture/`: UML diagrams and use cases defining the system architecture.
 - `data/`: Directory for historical market data (Parquet / HDF5 format).
+- `scripts/`: Auxiliary scripts for automation, such as the `mock_data_generator.py` for testing.
 - `notebooks/`: Interactive documentation and visual results.
 
 ## Class Diagram
