@@ -11,6 +11,25 @@ package "Core Domain (src/core/)" {
         + calculate_friction(prices: pandas.DataFrame, signals: pandas.Series[int]): pandas.Series[float]
     }
 
+    class ProportionalFrictionModel {
+        - proportional_rate: float
+        + calculate_friction(prices: pandas.DataFrame, signals: pandas.Series[int]): pandas.Series[float]
+    }
+
+    class FixedTransactionCostModel {
+        - fixed_amount: float
+        + calculate_friction(prices: pandas.DataFrame, signals: pandas.Series[int]): pandas.Series[float]
+    }
+
+    IFrictionModel <|.. ProportionalFrictionModel
+    IFrictionModel <|.. FixedTransactionCostModel
+
+    note right of IFrictionModel
+      **Friction Strategy Selection:**
+      - **Proportional**: Used for %-based fees (e.g., crypto, FX, relative commissions).
+      - **Fixed**: Used for flat-rate fees per trade (e.g., flat broker fees for equities).
+    end note
+
     interface IStrategy <<Interface>> {
         + calculate_signals(data: pandas.DataFrame): pandas.Series[int]
     }
