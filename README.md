@@ -1,7 +1,7 @@
 # Algorithmic Trading Backtester
 
 ## Objective
-To demonstrate an impeccable software architecture and efficient time-series processing for algorithmic trading backtesting.
+A vectorized backtesting engine for evaluating algorithmic trading strategies using historical market data.
 
 ## Project Structure
 - `src/`: Core implementation containing data loaders, strategies, backtesting engine, and performance metrics.
@@ -11,4 +11,10 @@ To demonstrate an impeccable software architecture and efficient time-series pro
 
 ## Class Diagram
 
-![Class Diagram](docs/architecture/ClassDiagram.svg)
+<div style="overflow-x: auto; white-space: nowrap;">
+  <a href="docs/architecture/ClassDiagram.svg" target="_blank">
+    <img src="docs/architecture/ClassDiagram.svg" width="2500" alt="Class Diagram (Click to open full size)">
+  </a>
+</div>
+
+*Tip: You can scroll horizontally to view the entire diagram, or click on it to open it in full size in a new tab.*
