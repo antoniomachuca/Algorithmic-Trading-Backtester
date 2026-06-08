@@ -11,6 +11,8 @@ A vectorized backtesting engine for evaluating algorithmic trading strategies us
 
 ## Class Diagram
 
+The architecture follows SOLID principles (ISP and DIP) and the Hexagonal Architecture pattern. Recent updates separate reading (`IDataHandler`) from writing (`IDataWriter`) and use a `DataIngestionService` to decouple dependencies. 
+
 <div style="overflow-x: auto; white-space: nowrap;">
   <a href="docs/architecture/ClassDiagram.svg" target="_blank">
     <img src="docs/architecture/ClassDiagram.svg" width="2500" alt="Class Diagram (Click to open full size)">

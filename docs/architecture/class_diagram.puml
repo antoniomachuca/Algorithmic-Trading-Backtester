@@ -54,14 +54,20 @@ package "Data Infrastructure (Ports & Adapters)" {
         + load_data(symbol: str): pandas.DataFrame
     }
 
+    interface IDataWriter <<Port>> {
+        + save_data(symbol: str, data: pandas.DataFrame): void
+    }
+
     class HDF5DataHandler <<Adapter>> {
         - file_path: str
         + load_data(symbol: str): pandas.DataFrame
+        + save_data(symbol: str, data: pandas.DataFrame): void
     }
     
     class ParquetDataHandler <<Adapter>> {
-        - file_path: str
+        - dir_path: str
         + load_data(symbol: str): pandas.DataFrame
+        + save_data(symbol: str, data: pandas.DataFrame): void
     }
 
     class BloombergDataHandler <<Adapter>> {
@@ -70,8 +76,19 @@ package "Data Infrastructure (Ports & Adapters)" {
     }
 
     IDataHandler <|.. HDF5DataHandler
+    IDataWriter <|.. HDF5DataHandler
     IDataHandler <|.. ParquetDataHandler
+    IDataWriter <|.. ParquetDataHandler
     IDataHandler <|.. BloombergDataHandler
+
+    class DataIngestionService {
+        - reader: IDataHandler
+        - writer: IDataWriter
+        + ingest(symbols: list[str]): void
+    }
+    
+    DataIngestionService o-- IDataHandler
+    DataIngestionService o-- IDataWriter
 }
 
 package "Application Layer" {
