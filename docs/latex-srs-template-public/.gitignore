@@ -1,0 +1,11 @@
+# Auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+.DS_Store
+

@@ -1,0 +1,20 @@
+\chapter{Theoretical Foundations}
+
+\section{Financial Time Series Modeling}
+Provide the formal mathematical definition of Geometric Brownian Motion (GBM) used for mock data generation.
+
+\section{Trading Strategies}
+\subsection{Simple Moving Average (SMA)}
+Define the formal mathematical model for the SMA strategy. 
+Example: $SMA_t = \frac{1}{n} \sum_{i=0}^{n-1} P_{t-i}$.
+
+\subsection{Momentum}
+Define the log-returns calculation: $r_t = \ln\left(\frac{P_t}{P_{t-1}}\right)$.
+
+\section{Performance Metrics}
+Provide the strict formal formulation for risk and performance metrics:
+\begin{itemize}
+    \item \textbf{Sharpe Ratio}: $S = \frac{\mathbb{E}[R_p - R_f]}{\sigma_p}$
+    \item \textbf{Maximum Drawdown (MDD)}: $MDD = \min\left( \frac{P_t - \text{Peak}_t}{\text{Peak}_t} \right)$
+    \item \textbf{Compound Annual Growth Rate (CAGR)}: $CAGR = \left(\frac{EV}{BV}\right)^{\frac{1}{n}} - 1$
+\end{itemize}
