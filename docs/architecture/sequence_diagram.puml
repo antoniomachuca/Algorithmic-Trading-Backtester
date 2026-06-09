@@ -2,7 +2,7 @@
 skinparam DefaultFontName Arial
 skinparam DefaultFontSize 12
 skinparam BackgroundColor transparent
-
+hide footbox
 
 
 actor User
