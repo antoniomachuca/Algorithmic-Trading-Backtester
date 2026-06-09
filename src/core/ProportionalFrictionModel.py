@@ -25,10 +25,8 @@ class ProportionalFrictionModel(IFrictionModel):
         """
         Calculates the friction costs vectorially using proportional rates.
         
-        Mathematical Formulation:
-            $C_t = |S_{t-1} - S_{t-2}| \times c_{prop}$
-            
-        where $S_t$ is the target signal at time $t$ and $c_{prop}$ is the proportional rate.
+        Mathematical Formulation: \(C_t = |S_{t-1} - S_{t-2}| \times c_{prop}\)
+        where \(S_t\) is the target signal at time \(t\) and \(c_{prop}\) is the proportional rate.
 
         Args:
             prices (pd.DataFrame): Time-series of asset prices (unused in this specific model).

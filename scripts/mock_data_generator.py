@@ -52,11 +52,11 @@ def create_mock_ohlcv() -> None:
     volume = np.random.randint(1000, 1000000, size=periods)
     
     df = pd.DataFrame({
-        "Open": open_prices,
-        "High": high_prices,
-        "Low": low_prices,
-        "Close": close_prices,
-        "Volume": volume
+        "open": open_prices,
+        "high": high_prices,
+        "low": low_prices,
+        "close": close_prices,
+        "volume": volume
     }, index=dates)
     
     script_dir = os.path.dirname(os.path.abspath(__file__))
