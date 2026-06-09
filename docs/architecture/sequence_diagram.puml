@@ -1,9 +1,7 @@
 @startuml
-skinparam style strictuml
 skinparam DefaultFontName Arial
 skinparam DefaultFontSize 12
 skinparam BackgroundColor transparent
-skinparam handwritten false
 
 
 
