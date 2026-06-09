@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1780955938.72805 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1780955939.96334 0
+["pdflatex"] 1781000765.21025 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1781000766.21494 0
   "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" 1780955928.92671 675 fe54db6533dd468a5ad93eee87cbf5b6 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -189,15 +189,15 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1767698621 5541377 0af08d58b046ada1f2a2c7d4825ab417 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1767698650 3635738 1cfe9937fa9877f3aba021477a533814 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "chapters/01_Introduction.tex" 1780955930.94489 1000 64e119925ffff4a93bdc2f17af217541 ""
+  "chapters/01_Introduction.tex" 1781000764.92313 1932 39ccb19a63e492712151019d55287f3a ""
   "chapters/02_Theoretical_Background.tex" 1780955932.95784 909 c452370ca517115c75e6822f687b4f9c ""
   "chapters/03_Architecture_Design.tex" 1780955934.97739 701 7624d37c8eb10ae26ef3de99b8943e5c ""
   "chapters/04_Implementation_Vectorization.tex" 1780955935.8967 709 3b38a9e287530ce1e2d1bdfec50f52a9 ""
   "chapters/05_Results_Conclusions.tex" 1780955937.90295 617 4c437d1be3b9bc261663dbf44a93da1b ""
-  "main.aux" 1780955939.83029 3540 91d11ebc30f286f36f41cb50930fa8d8 "pdflatex"
-  "main.out" 1780955939.83143 3646 c0a9abc30c9e6388d2a1de7486ce2c56 "pdflatex"
+  "main.aux" 1781000766.12884 3540 2732e5e581a7aa1cfab84caead0b308b "pdflatex"
+  "main.out" 1781000766.12958 3646 c0a9abc30c9e6388d2a1de7486ce2c56 "pdflatex"
   "main.tex" 1780955928.92671 675 fe54db6533dd468a5ad93eee87cbf5b6 ""
-  "main.toc" 1780955939.83174 1926 39b0fda12044276773c583710ac34cba "pdflatex"
+  "main.toc" 1781000766.12981 1926 91b4db25fc600f8f1779bda01497f1d1 "pdflatex"
   "srsdocument.cls" 1780955817.44307 8269 43a61a1fa51ef29e14f6ff98217e019e ""
   (generated)
   "main.aux"

@@ -24,3 +24,12 @@ data/*
 .vscode/
 *.swp
 .DS_Store
+
+#LATEX 
+*.toc
+*.aux
+*.out
+*.log
+*.synctex.gz
+*.fls 
+*.fdb_latexmk

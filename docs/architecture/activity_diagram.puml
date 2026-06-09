@@ -1,0 +1,23 @@
+@startuml
+skinparam BackgroundColor transparent
+skinparam DefaultFontName Arial
+
+
+
+start
+:Receive `signals` Series and `prices` DataFrame;
+:Calculate periodic asset returns: \n`returns = prices['close'].pct_change()`;
+:Shift `signals` by 1 to prevent look-ahead bias:\n`shifted_signals = signals.shift(1).fillna(0)`;
+:Compute raw strategy returns:\n`strategy_returns = shifted_signals * returns`;
+
+partition "Friction Calculation" {
+    :Call `friction_model.calculate_friction()`;
+    :Calculate absolute position changes:\n`trade_delta = shifted_signals.diff().fillna(0).abs()`;
+    :Apply proportional cost:\n`costs = trade_delta * proportional_rate`;
+}
+
+:Compute Net Returns:\n`net_returns = strategy_returns - costs`;
+:Update Equity Curve (Compounding):\n`equity_curve = initial_capital * (1.0 + net_returns).cumprod()`;
+stop
+
+@enduml

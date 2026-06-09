@@ -1,0 +1,49 @@
+@startuml
+skinparam style strictuml
+skinparam DefaultFontName Arial
+skinparam DefaultFontSize 12
+skinparam BackgroundColor transparent
+skinparam handwritten false
+
+
+
+actor User
+participant "engine : BacktestEngine" as Engine
+participant "data_handler : IDataHandler" as DataHandler
+participant "strategy : IStrategy" as Strategy
+participant "portfolio : Portfolio" as Portfolio
+participant "friction_model : IFrictionModel" as Friction
+
+User -> Engine : run_backtest(symbol)
+activate Engine
+
+Engine -> DataHandler : load_data(symbol)
+activate DataHandler
+DataHandler --> Engine : DataFrame (historical_data)
+deactivate DataHandler
+
+Engine -> Strategy : calculate_signals(historical_data)
+activate Strategy
+note right of Strategy: Vectorized calculation\nO(1) asymptotic complexity
+Strategy --> Engine : Series (signals)
+deactivate Strategy
+
+Engine -> Portfolio : update_from_signals(signals, historical_data)
+activate Portfolio
+
+Portfolio -> Portfolio : Calculate gross returns\n(shifted_signals * returns)
+Portfolio -> Friction : calculate_friction(prices, signals)
+activate Friction
+note right of Friction: Evaluates transaction costs\nvectorially
+Friction --> Portfolio : Series (costs)
+deactivate Friction
+
+Portfolio -> Portfolio : Compute net_returns\n(gross_returns - costs)
+Portfolio -> Portfolio : Cumprod equity_curve
+Portfolio --> Engine : void
+deactivate Portfolio
+
+Engine --> User : void
+deactivate Engine
+
+@enduml

@@ -321,13 +321,12 @@ INPUT chapters/01_Introduction.tex
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./chapters/02_Theoretical_Background.tex
 INPUT ./chapters/02_Theoretical_Background.tex
 INPUT ./chapters/02_Theoretical_Background.tex
 INPUT ./chapters/02_Theoretical_Background.tex
 INPUT chapters/02_Theoretical_Background.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT ./chapters/03_Architecture_Design.tex
@@ -345,6 +344,7 @@ INPUT ./chapters/05_Results_Conclusions.tex
 INPUT ./chapters/05_Results_Conclusions.tex
 INPUT ./chapters/05_Results_Conclusions.tex
 INPUT chapters/05_Results_Conclusions.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out
