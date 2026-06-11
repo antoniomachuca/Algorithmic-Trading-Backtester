@@ -231,8 +231,7 @@
 
 		\begin{bfseries}
 			\Huge
-			Algorithmic Trading \\
-			Backtester\\
+			Melchior\\
 			\vspace{0.5in}
 			\thetitle
 			\vspace{0.5in}

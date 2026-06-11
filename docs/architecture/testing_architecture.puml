@@ -1,0 +1,76 @@
+@startuml
+skinparam style strictuml
+skinparam classAttributeIconSize 0
+skinparam monochrome true
+
+package "core" {
+    class Performance <<Domain Service>> {
+        +calculate_sharpe_ratio(returns: Series, risk_free_rate: float) : float
+        +calculate_max_drawdown(equity_curve: Series) : float
+        +calculate_annualized_volatility(returns: Series) : float
+        +calculate_cagr(equity_curve: Series) : float
+    }
+
+    class Portfolio <<Aggregate Root>> {
+        -_initial_capital : float
+        -_friction_model : IFrictionModel
+        +update_from_signals(signals: Series, prices: DataFrame) : None
+        +get_equity_curve() : Series
+    }
+
+    interface IFrictionModel {
+        +calculate_friction(prices: DataFrame, signals: Series) : Series
+    }
+
+    interface IStrategy {
+        +calculate_signals(data: DataFrame) : Series
+    }
+}
+
+package "tests" {
+    class TestPerformance {
+        +test_calculate_sharpe_ratio() : None
+        +test_calculate_max_drawdown() : None
+        +test_calculate_annualized_volatility() : None
+        +test_calculate_cagr() : None
+    }
+
+    class TestPortfolio {
+        +test_update_from_signals_frictionless() : None
+        +test_update_from_signals_with_friction() : None
+    }
+
+    class TestStrategies {
+        +test_sma_strategy_signals() : None
+        +test_momentum_strategy_signals() : None
+    }
+
+    class DummyZeroFriction {
+        +calculate_friction(prices: DataFrame, signals: Series) : Series
+    }
+    note bottom of DummyZeroFriction
+      Mocks 0 transaction costs to validate
+      pure strategy logic in Portfolio.
+    end note
+
+    class DummyFixedFriction {
+        +calculate_friction(prices: DataFrame, signals: Series) : Series
+    }
+    note bottom of DummyFixedFriction
+      Mocks a fixed cost per trade to test
+      Portfolio equity deductions.
+    end note
+}
+
+IFrictionModel <|.. DummyZeroFriction
+IFrictionModel <|.. DummyFixedFriction
+
+TestPortfolio ..> DummyZeroFriction
+TestPortfolio ..> DummyFixedFriction
+TestPortfolio ..> Portfolio
+
+TestPerformance ..> Performance
+
+TestStrategies ..> IStrategy
+
+@enduml
