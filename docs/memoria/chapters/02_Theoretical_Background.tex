@@ -1,20 +1,153 @@
 \chapter{Theoretical Foundations}
 
+This chapter establishes the strict mathematical and stochastic foundations upon which the backtesting engine is built. We present the concepts as formal definitions and observations to ensure clarity.
+
 \section{Financial Time Series Modeling}
-Provide the formal mathematical definition of Geometric Brownian Motion (GBM) used for mock data generation.
+
+\begin{definition}[Scale Invariance]
+In financial mathematics, a metric is \textit{scale-invariant} if its significance does not depend on the absolute magnitude of the underlying variable.
+\end{definition}
+\begin{remark}
+    Therefore, the absolute difference in an asset's price (\(P_t - P_{t-1}\)) is not scale-invariant.
+\end{remark}
+\begin{example}[Lack of Scale Invariance]
+A \$1 drop in a \$10 stock represents a catastrophic 10\% loss of capital. However, exactly the same absolute \$1 drop in a \$1000 stock is merely 0.1\% market noise. This illustrates why absolute price differences are useless for universal comparisons.
+\end{example}
+
+\begin{remark}[Need for Relative Returns]
+Because raw price changes lack scale invariance, quantitative models must standardize measurements to evaluate risk and return universally, regardless of the underlying asset price. This forces us to use relative returns rather than absolute price differences.
+\end{remark}
+
+\begin{definition}[Asset Price and Returns]
+Let \(P_t\) be the price of a financial asset at a discrete time step \(t\). Based on the necessity for scale invariance, we define two main types of relative returns:
+\begin{itemize}
+    \item \textit{Arithmetic (Simple) Return:} \(R_t = \frac{P_t - P_{t-1}}{P_{t-1}}\)
+    \item \textit{Logarithmic (Continuously Compounded) Return:} \(r_t = \ln\left(\frac{P_t}{P_{t-1}}\right)\)
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Continuous-Time Stochastic Process]
+A continuous-time stochastic process is a collection of random variables \(\{X_t\}_{t \in T}\) where the index set \(T\) is a continuous interval (e.g., \(T = [0, \infty)\)). Each random variable \(X_t\) represents the state of the process at time \(t\).
+\end{definition}
+
+\begin{definition}[Wiener Process / Brownian Motion]
+A Wiener process \(W_t\) is a continuous-time stochastic process characterized by three main properties:
+\begin{enumerate}
+    \item \(W_0 = 0\)
+    \item It has independent increments: for every \(t > 0\), the future increment \(W_{t+u} - W_t\) is independent of the past values \(W_s\) (\(s \le t\)).
+    \item It has normally distributed increments: \(W_{t+u} - W_t \sim \mathcal{N}(0, u)\).
+\end{enumerate}
+\end{definition}
+To ground the concept of a Wiener process (also called Brownian motion), we will give the canonical example, the pollen grain:
+\begin{example}
+    Let there be a microscopic pollen grain suspended in stagnant water. The grain starts at a known position (\(W_0 = 0\)). Invisible water molecules constantly hit it from random directions, as the collisions are random, every microscopic movement of the grain is independent of its previous movements (independent increments). As time passes, the area where the grain could have gone becomes wider, and the possible locations form a Gaussian bell curve (normally distributed increments).
+\end{example}
+
+\begin{definition}[Itô Drift-Diffusion Process]
+An Itô drift-diffusion process is a continuous-time stochastic process \(X_t\) that combines a deterministic drift component and a stochastic diffusion component driven by a Wiener process. It is mathematically expressed by the Stochastic Differential Equation:
+\[
+    dX_t = \mu_t dt + \sigma_t dW_t
+\]
+Where \(\mu_t\) represents the expected instantaneous drift rate, \(\sigma_t\) represents the instantaneous volatility (or diffusion), and \(W_t\) is a standard Wiener process.
+\end{definition}
+    To intuitively understand the concept of an Itô drift-diffusion process we will look at an example, the example of the restless dog.
+\begin{example}
+    Consider a person walking a restless dog. The steady and predictable step of the person forward represents the \textit{drift} (\(\mu_t dt\)). Meanwhile, the dog pulls the leash randomly from side to side to sniff things, which represents the \textit{diffusion} (\(\sigma_t dW_t\)). The actual path they walk together (\(dX_t\)) is the sum of the deterministic direction of the person and the random movements of the dog.
+\end{example}
+
+\begin{proposition}[Itô's Lemma]
+ If \(X_t\) is an Itô drift-diffusion process given by \(dX_t = \mu_t dt + \sigma_t dW_t\), and \(f(t, x)\) is a twice-differentiable scalar function, then \(f(t, X_t)\) is also an Itô process, and its differential is given by:
+\[
+    df = \left( \frac{\partial f}{\partial t} + \mu_t \frac{\partial f}{\partial x} + \frac{1}{2}\sigma_t^2 \frac{\partial^2 f}{\partial x^2} \right) dt + \sigma_t \frac{\partial f}{\partial x} dW_t
+\]
+\end{proposition}
+\begin{remark}
+    Itô's Lemma is the stochastic equivalent of the chain rule in classical calculus.
+\end{remark}
+
+\begin{definition}[Geometric Brownian Motion]
+The Geometric Brownian Motion or GBM is a continuous-time stochastic process frequently used to model the price paths of financial assets. It is defined by the Stochastic Differential Equation (SDE):
+\[
+    dS_t = \mu S_t dt + \sigma S_t dW_t
+\]
+Where \(S_t\) is the asset price at time \(t\), \(\mu\) is the percentage drift (expected return), \(\sigma\) is the percentage volatility, and \(W_t\) is a standard Wiener process (Brownian motion). Applying Itô's Lemma, it can be shown that under this model, the natural logarithm of the asset price follows a normal distribution.
+\end{definition}
+
+\begin{remark}[Arithmetic vs. Logarithmic Returns]
+Logarithmic returns are widely used in quantitative analysis because they are time-additive: the total return over \(n\) days is the sum of the daily logarithmic returns (\(r_{0,n} = \sum_{t=1}^n r_t\)). Furthermore, under the GBM model, logarithmic returns are normally distributed, which facilitates statistical modeling.
+
+However, \textit{logarithmic returns are not cross-sectionally additive} (the sum of the logarithmic returns of two assets does not equal the logarithmic return of a portfolio containing them). Therefore, when simulating the actual \textbf{equity curve of a portfolio}, we must strictly use arithmetic returns (\(R_t\)) combined with cumulative products.
+\[
+    V_T = V_0 \prod_{t=1}^{T} (1 + R_{\text{strategy}, t} - C_t)
+\]
+Where \(V_T\) is the portfolio value at time \(T\), and \(C_t\) represents the transaction costs.
+\end{remark}
+
+\begin{proposition}[Temporal Scaling of Volatility - Annualization]
+Assuming that the logarithmic returns \(r_t\) are independent and identically distributed (i.i.d.) random variables, the variance of the returns scales linearly with time.
+\[ 
+     \text{Var}(r_{\text{annual}}) = 252 \cdot \text{Var}(r_{\text{daily}})
+\]
+Where 252 is the standard number of trading days in a year.
+\end{proposition}
+
+\begin{remark}
+Since volatility (\(\sigma\)) is defined as the standard deviation (the square root of the variance), taking the square root of both sides of the previous proposition yields:
+\[ 
+     \sigma_{\text{annual}} = \sqrt{\text{Var}(r_{\text{annual}})} = \sqrt{252 \cdot \text{Var}(r_{\text{daily}})} = \sqrt{252} \cdot \sigma_{\text{daily}} 
+\]
+This explains why we scale risk (volatility) using the square root of time, whereas expected returns scale linearly by simply multiplying the daily mean by 252.
+\end{remark}
 
 \section{Trading Strategies}
+
 \subsection{Simple Moving Average (SMA)}
-Define the formal mathematical model for the SMA strategy. 
-Example: $SMA_t = \frac{1}{n} \sum_{i=0}^{n-1} P_{t-i}$.
+
+\begin{definition}[Simple Moving Average]
+The simple moving average or SMA over a lookback window of \(n\) periods at time \(t\) is the unweighted mean of the previous \(n\) data points:
+\[ 
+    SMA_t^{(n)} = \frac{1}{n} \sum_{i=0}^{n-1} P_{t-i}
+\]
+\end{definition}
+\begin{remark}
+    A classic strategy generates a bullish signal (\(+1\)) when a short-term SMA crosses above a long-term SMA, and a bearish signal (\(-1\)) otherwise.
+    
+\end{remark}
 
 \subsection{Momentum}
-Define the log-returns calculation: $r_t = \ln\left(\frac{P_t}{P_{t-1}}\right)$.
+
+\begin{definition}[Momentum]
+Momentum measures the rate of change in an asset's price over a specific period \(k\). It is mathematically defined as the arithmetic return over \(k\) periods:
+\[ 
+    M_t^{(k)} = \frac{P_t - P_{t-k}}{P_{t-k}} 
+\]
+\begin{remark}
+The strategy operates as follows: it buys when the momentum is strictly positive, i.e. \(M_t^{(k)} > 0\), and sells when it is negative.
+\end{remark}
+\end{definition}
 
 \section{Performance Metrics}
-Provide the strict formal formulation for risk and performance metrics:
-\begin{itemize}
-    \item \textbf{Sharpe Ratio}: $S = \frac{\mathbb{E}[R_p - R_f]}{\sigma_p}$
-    \item \textbf{Maximum Drawdown (MDD)}: $MDD = \min\left( \frac{P_t - \text{Peak}_t}{\text{Peak}_t} \right)$
-    \item \textbf{Compound Annual Growth Rate (CAGR)}: $CAGR = \left(\frac{EV}{BV}\right)^{\frac{1}{n}} - 1$
-\end{itemize}
+
+\begin{definition}[Sharpe Ratio]
+The Sharpe Ratio measures the excess return per unit of total risk (volatility).
+\[ 
+    S = \frac{\mathbb{E}[R_p - R_f]}{\sigma_p} 
+\]
+Where \(R_p\) is the portfolio return and \(R_f\) is the risk-free rate.
+\end{definition}
+
+\begin{remark}[Limitations of the Sharpe Ratio]
+A major mathematical flaw of the Sharpe Ratio is that the standard deviation (\(\sigma_p\)) treats both upward volatility (massive sudden gains) and downward volatility (losses) equally as "risk". A rational investor does not fear positive volatility. To correct this, the \textit{Sortino Ratio} is often preferred, as it only measures the semi-variance of negative returns (downside risk).
+\end{remark}
+
+\begin{definition}[Maximum Drawdown and High-Water Mark]
+The Maximum Drawdown (MDD) is the largest drop from a historical peak in the portfolio's value. To define it, we first define the \textit{High-Water Mark} (the running maximum equity up to time \(t\)): \(\max_{\tau \le t} V_\tau\).
+The MDD is the worst relative drop:
+\[ 
+    MDD = \min_{t} \left( \frac{V_t - \max_{\tau \le t} V_\tau}{\max_{\tau \le t} V_\tau} \right) 
+\]
+\end{definition}
+
+\begin{remark}[Asymmetry of Drawdowns]
+The MDD is critical because financial recovery is strictly asymmetric. If a portfolio suffers a 50\% drop, it requires a subsequent 100\% gain just to reach the break-even point. This is why accurately tracking the running maximum reliably reflects the true "risk of ruin".
+\end{remark}

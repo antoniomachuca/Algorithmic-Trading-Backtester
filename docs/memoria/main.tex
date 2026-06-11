@@ -3,10 +3,21 @@
 \usepackage[english]{babel}
 \usepackage{amsmath} % For math environments
 \usepackage{amsfonts} % For math fonts
+\usepackage{amsthm} % For theorem environments
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{geometry}
 \geometry{a4paper, margin=2.5cm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+
+\theoremstyle{remark}
+\newtheorem{remark}{Observation}[chapter]
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}[chapter]
 
 \title{Project Documentation: Algorithmic Trading Backtester}
 \author{Antonio Machuca}
