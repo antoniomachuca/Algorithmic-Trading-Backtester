@@ -8,6 +8,9 @@
 \usepackage{hyperref}
 \usepackage{geometry}
 \geometry{a4paper, margin=2.5cm}
+\usepackage{pdflscape}
+\usepackage[style=numeric, sorting=none, backend=biber]{biblatex}
+\addbibresource{references.bib}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}[chapter]
@@ -35,5 +38,9 @@
 \input{chapters/03_Architecture_Design}
 \input{chapters/04_Implementation_Vectorization}
 \input{chapters/05_Results_Conclusions}
+
+\newpage
+\nocite{*}
+\printbibliography[heading=bibintoc, title={References}]
 
 \end{document}
