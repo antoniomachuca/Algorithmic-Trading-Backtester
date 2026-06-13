@@ -8,3 +8,9 @@ Summary of the project's achievements against its initial goals in terms of soft
 
 \section{Future Work}
 Potential improvements, such as adding new statistical models, expanding the framework to multi-asset portfolios, or integrating real-time live trading connectivity.
+
+\subsection{Memory Optimization with NumExpr}
+
+While the current architecture leverages \texttt{NumPy} and \texttt{pandas} to achieve \(\mathcal{O}(1)\) time complexity through vectorization, standard \texttt{NumPy} operations evaluate expressions sequentially and allocate intermediate arrays in memory. For instance, calculating a complex sequence like \( A \times B - C \) creates temporary memory buffers for each sub-operation before yielding the final result.
+
+The current project scope does not utilize \texttt{numexpr}, a high-performance numerical expression evaluator. For the existing daily or minute-resolution backtests, standard vectorization provides sufficient speed without introducing additional third-party dependencies. However, as future work, integrating \texttt{numexpr} (or leveraging \texttt{pandas.eval()}) is highly recommended when scaling the engine to process high-frequency, tick-level data across thousands of simultaneous assets. \texttt{numexpr} evaluates complex algebraic expressions element-wise in C without allocating intermediate arrays and dynamically distributes the workload across multiple CPU cores. This architectural upgrade would significantly optimize the memory footprint (Space Complexity) and further reduce the computational constant factors of the backtesting pipeline.

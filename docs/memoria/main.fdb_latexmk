@@ -1,15 +1,16 @@
 # Fdb version 4
-["biber main"] 1781220690.00714 "main.bcf" "main.bbl" "main" 1781276679.32693 0
-  "main.bcf" 1781276679.21835 107814 d7b1ef1f2b38958148b6a55875cc8f1d "pdflatex"
+["biber main"] 1781349220.30109 "main.bcf" "main.bbl" "main" 1781349232.20715 0
+  "main.bcf" 1781349232.07996 108015 a95bd7fc15541b8cd6ec446d4fa5794c "pdflatex"
   "references.bib" 1781220689.76365 532 5c2b1eb7d013dc488264ea37bfbab144 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1781276677.61565 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1781276679.32722 0
+["pdflatex"] 1781349230.93694 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1781349232.20744 0
   "../architecture/activity_diagram.pdf" 1781218848.64362 32406 57e18659cbe5c421f063a8ac9ca4c293 ""
   "../architecture/class_diagram.pdf" 1781219010.36284 65147 ec3733664c84edb15d23fe905c0d4df4 ""
   "../architecture/sequence_diagram.pdf" 1781218848.80617 22739 3d19921beda7629bfd81a27dd7962a4f ""
+  "../architecture/vectorization_benchmark.pdf" 1781314287.02235 25590 e78676e072882e1a5ac1c2c171e5560a ""
   "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" 1781220592.58399 1166 d2303248b9d394b1ef1603e44c10872d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -222,17 +223,17 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1767698621 5541377 0af08d58b046ada1f2a2c7d4825ab417 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1767698650 3635738 1cfe9937fa9877f3aba021477a533814 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "chapters/01_Introduction.tex" 1781220701.36002 1509 ccff60b88d7ca416a75418fc62e5d55b ""
+  "chapters/01_Introduction.tex" 1781279639.17349 1618 87558c89fb0e3411036d64621669a272 ""
   "chapters/02_Theoretical_Background.tex" 1781218518.08482 9890 ffec9fe998d2040a635de4e1c85fede9 ""
   "chapters/03_Architecture_Design.tex" 1781276677.3584 8855 66301103bdde6461862c60292d35a99a ""
-  "chapters/04_Implementation_Vectorization.tex" 1780955935.8967 709 3b38a9e287530ce1e2d1bdfec50f52a9 ""
-  "chapters/05_Results_Conclusions.tex" 1780955937.90295 617 4c437d1be3b9bc261663dbf44a93da1b ""
-  "main.aux" 1781276679.21306 5281 6c71660d371cce73a25334bf561d8f5e "pdflatex"
-  "main.bbl" 1781220692.00963 4103 c4d72150b9dcfd358ad7d8f20e99f9c7 "biber main"
-  "main.out" 1781276679.21571 4706 255cc127bc4c8a5f22dc52cecce706e0 "pdflatex"
-  "main.run.xml" 1781276679.21908 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "chapters/04_Implementation_Vectorization.tex" 1781349218.76456 8646 c2b4245681ea62ea7f29df788a2fdd42 ""
+  "chapters/05_Results_Conclusions.tex" 1781312100.80949 1942 0f3915a8393aef8e26e22b0d9ec59e6e ""
+  "main.aux" 1781349232.07583 6352 60c63b37b46a0439d673e962b8a73c5f "pdflatex"
+  "main.bbl" 1781349229.58059 4083 bba174ed515663905ab6132bbd9538fe "biber main"
+  "main.out" 1781349232.07741 5649 c70dac5b4a6e38860ece2b93d2ca3c6b "pdflatex"
+  "main.run.xml" 1781349232.0806 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
   "main.tex" 1781220592.58399 1166 d2303248b9d394b1ef1603e44c10872d ""
-  "main.toc" 1781276679.21919 2348 27229d5f4e35ffedbc796db53dfcfcf5 "pdflatex"
+  "main.toc" 1781349232.08066 2754 a04da933b67e52b5152060718d060dcf "pdflatex"
   "srsdocument.cls" 1781130039.20894 8241 9ec858c4c30e50404a571e66bf0736dc ""
   (generated)
   "main.aux"

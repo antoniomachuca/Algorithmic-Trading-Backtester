@@ -408,6 +408,11 @@ INPUT ./chapters/04_Implementation_Vectorization.tex
 INPUT ./chapters/04_Implementation_Vectorization.tex
 INPUT ./chapters/04_Implementation_Vectorization.tex
 INPUT chapters/04_Implementation_Vectorization.tex
+INPUT ../architecture/vectorization_benchmark.pdf
+INPUT ../architecture/vectorization_benchmark.pdf
+INPUT ../architecture/vectorization_benchmark.pdf
+INPUT ../architecture/vectorization_benchmark.pdf
+INPUT ../architecture/vectorization_benchmark.pdf
 INPUT ./chapters/05_Results_Conclusions.tex
 INPUT ./chapters/05_Results_Conclusions.tex
 INPUT ./chapters/05_Results_Conclusions.tex
