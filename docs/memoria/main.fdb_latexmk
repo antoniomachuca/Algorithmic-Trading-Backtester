@@ -1,14 +1,15 @@
 # Fdb version 4
-["biber main"] 1781349220.30109 "main.bcf" "main.bbl" "main" 1781349232.20715 0
-  "main.bcf" 1781349232.07996 108015 a95bd7fc15541b8cd6ec446d4fa5794c "pdflatex"
+["biber main"] 1781349220.30109 "main.bcf" "main.bbl" "main" 1781363277.30593 0
+  "main.bcf" 1781363277.19857 108082 2d994da58f2543255fdea2300d4103b6 "pdflatex"
   "references.bib" 1781220689.76365 532 5c2b1eb7d013dc488264ea37bfbab144 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1781349230.93694 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1781349232.20744 0
+["pdflatex"] 1781363275.81806 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1781363277.3062 0
   "../architecture/activity_diagram.pdf" 1781218848.64362 32406 57e18659cbe5c421f063a8ac9ca4c293 ""
   "../architecture/class_diagram.pdf" 1781219010.36284 65147 ec3733664c84edb15d23fe905c0d4df4 ""
+  "../architecture/equity_curve.pdf" 1781350946.86291 24544 1327bd6e8380fa96388a4c6bbd368d08 ""
   "../architecture/sequence_diagram.pdf" 1781218848.80617 22739 3d19921beda7629bfd81a27dd7962a4f ""
   "../architecture/vectorization_benchmark.pdf" 1781314287.02235 25590 e78676e072882e1a5ac1c2c171e5560a ""
   "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" 1781220592.58399 1166 d2303248b9d394b1ef1603e44c10872d ""
@@ -22,6 +23,8 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1136768653 1344 8a0be4fe4d376203000810ad4dc81558 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmcsc10.tfm" 1136768653 1300 63a6111ee6274895728663cf4b4e7e81 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -226,14 +229,14 @@
   "chapters/01_Introduction.tex" 1781279639.17349 1618 87558c89fb0e3411036d64621669a272 ""
   "chapters/02_Theoretical_Background.tex" 1781218518.08482 9890 ffec9fe998d2040a635de4e1c85fede9 ""
   "chapters/03_Architecture_Design.tex" 1781276677.3584 8855 66301103bdde6461862c60292d35a99a ""
-  "chapters/04_Implementation_Vectorization.tex" 1781349218.76456 8646 c2b4245681ea62ea7f29df788a2fdd42 ""
-  "chapters/05_Results_Conclusions.tex" 1781312100.80949 1942 0f3915a8393aef8e26e22b0d9ec59e6e ""
-  "main.aux" 1781349232.07583 6352 60c63b37b46a0439d673e962b8a73c5f "pdflatex"
+  "chapters/04_Implementation_Vectorization.tex" 1781363273.71944 9687 fd5757c0eb56a5d7df92b66271effc74 ""
+  "chapters/05_Results_Conclusions.tex" 1781363266.64111 4863 7d723f9f02134d9e828d9081657bc692 ""
+  "main.aux" 1781363277.19418 7119 09b99bf65fe67bb949da4951f582bdb8 "pdflatex"
   "main.bbl" 1781349229.58059 4083 bba174ed515663905ab6132bbd9538fe "biber main"
-  "main.out" 1781349232.07741 5649 c70dac5b4a6e38860ece2b93d2ca3c6b "pdflatex"
-  "main.run.xml" 1781349232.0806 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.out" 1781363277.19593 6303 707a1cae04103b9c94968bde0557f4ef "pdflatex"
+  "main.run.xml" 1781363277.19923 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
   "main.tex" 1781220592.58399 1166 d2303248b9d394b1ef1603e44c10872d ""
-  "main.toc" 1781349232.08066 2754 a04da933b67e52b5152060718d060dcf "pdflatex"
+  "main.toc" 1781363277.1993 3057 0bbfb8803a6d35037891e85463f5383f "pdflatex"
   "srsdocument.cls" 1781130039.20894 8241 9ec858c4c30e50404a571e66bf0736dc ""
   (generated)
   "main.aux"
