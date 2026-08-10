@@ -2,6 +2,7 @@
 Proportional friction model implementation.
 """
 import pandas as pd
+
 from src.core.IFrictionModel import IFrictionModel
 
 

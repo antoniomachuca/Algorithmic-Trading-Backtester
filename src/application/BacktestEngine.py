@@ -1,9 +1,9 @@
 """
 Application Layer implementing the Backtest Engine.
 """
-from src.infrastructure.IDataHandler import IDataHandler
 from src.core.IStrategy import IStrategy
 from src.core.Portfolio import Portfolio
+from src.infrastructure.IDataHandler import IDataHandler
 
 
 class BacktestEngine:

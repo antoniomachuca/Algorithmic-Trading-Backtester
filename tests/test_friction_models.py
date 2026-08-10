@@ -1,7 +1,10 @@
 import unittest
+
 import pandas as pd
+
 from src.core.FixedTransactionCostModel import FixedTransactionCostModel
 from src.core.ProportionalFrictionModel import ProportionalFrictionModel
+
 
 class TestFrictionModels(unittest.TestCase):
     def setUp(self):

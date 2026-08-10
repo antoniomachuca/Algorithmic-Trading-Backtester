@@ -1,11 +1,14 @@
 import unittest
-import pandas as pd
 from unittest.mock import MagicMock
+
+import pandas as pd
+
 from src.application.BacktestEngine import BacktestEngine
 from src.core.IStrategy import IStrategy
 from src.core.Portfolio import Portfolio
-from src.infrastructure.IDataHandler import IDataHandler
 from src.core.ProportionalFrictionModel import ProportionalFrictionModel
+from src.infrastructure.IDataHandler import IDataHandler
+
 
 class TestBacktestEngine(unittest.TestCase):
     def setUp(self):

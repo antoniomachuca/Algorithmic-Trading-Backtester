@@ -1,13 +1,16 @@
-import unittest
-import pandas as pd
 import os
 import tempfile
-from src.infrastructure.ParquetDataHandler import ParquetDataHandler
-from src.infrastructure.HDF5DataHandler import HDF5DataHandler
-from src.infrastructure.DataIngestionService import DataIngestionService
+import unittest
 from unittest.mock import MagicMock
-from src.infrastructure.IDataWriter import IDataWriter
+
+import pandas as pd
+
+from src.infrastructure.DataIngestionService import DataIngestionService
+from src.infrastructure.HDF5DataHandler import HDF5DataHandler
 from src.infrastructure.IDataHandler import IDataHandler
+from src.infrastructure.IDataWriter import IDataWriter
+from src.infrastructure.ParquetDataHandler import ParquetDataHandler
+
 
 class TestDataHandlers(unittest.TestCase):
     def setUp(self):

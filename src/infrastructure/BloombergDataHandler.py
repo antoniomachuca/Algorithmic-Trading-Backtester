@@ -2,6 +2,7 @@
 Adapter to load data directly via the Bloomberg API.
 """
 import pandas as pd
+
 try:
     from xbbg import blp
 except ImportError:

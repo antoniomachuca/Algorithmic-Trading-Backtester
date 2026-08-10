@@ -1,8 +1,8 @@
-import time
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
 import os
+import time
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def benchmark():
@@ -27,7 +27,7 @@ def benchmark():
         # 2. Vectorized Approach (NumPy)
         start_time = time.perf_counter()
         # Equivalent to pct_change
-        returns_vect = (prices[1:] - prices[:-1]) / prices[:-1]
+        _ = (prices[1:] - prices[:-1]) / prices[:-1]
         vectorized_time = time.perf_counter() - start_time
         vectorized_times.append(vectorized_time)
 

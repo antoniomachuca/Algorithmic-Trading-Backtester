@@ -2,6 +2,7 @@
 Interface representing a friction model.
 """
 from abc import ABC, abstractmethod
+
 import pandas as pd
 
 
@@ -21,4 +22,3 @@ class IFrictionModel(ABC):
         Returns:
             pd.Series[float]: Series representing the friction costs per period.
         """
-        pass

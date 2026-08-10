@@ -2,12 +2,12 @@
 Unit tests for the Performance domain service.
 Ensures mathematical exactness and algorithmic accuracy without iteration.
 """
-import pytest
-import pandas as pd
 import numpy as np
 import numpy.testing as npt
+import pandas as pd
 
 from src.core.Performance import Performance
+
 
 class TestPerformance:
     """

@@ -2,13 +2,11 @@
 Unit tests for the trading strategies.
 Ensures correct vectorized signal generation without NaNs causing logic breaks.
 """
-import pytest
-import pandas as pd
-import numpy as np
 import numpy.testing as npt
+import pandas as pd
 
-from src.core.SMAStrategy import SMAStrategy
 from src.core.MomentumStrategy import MomentumStrategy
+from src.core.SMAStrategy import SMAStrategy
 
 
 class TestStrategies:

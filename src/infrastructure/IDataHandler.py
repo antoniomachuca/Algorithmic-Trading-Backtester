@@ -2,6 +2,7 @@
 Port (Interface) for data handlers.
 """
 from abc import ABC, abstractmethod
+
 import pandas as pd
 
 
@@ -25,4 +26,3 @@ class IDataHandler(ABC):
             Time: O(N) wrapper for highly optimized I/O operations.
             Space: O(N) memory allocation for the DataFrame.
         """
-        pass

@@ -1,0 +1,7 @@
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# N999: Invalid module name (we use PascalCase for classes/modules by design)
+# BLE001: Do not catch blind exception (we use it in notebooks for simplicity)
+extend-ignore = ["N999", "BLE001", "F841"]

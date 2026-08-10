@@ -1,6 +1,8 @@
 import os
+
 import numpy as np
 import pandas as pd
+
 
 def generate_geometric_brownian_motion(
     S0: float, 

@@ -1,8 +1,9 @@
 """
 Momentum strategy implementation.
 """
-import pandas as pd
 import numpy as np
+import pandas as pd
+
 from src.core.IStrategy import IStrategy
 
 

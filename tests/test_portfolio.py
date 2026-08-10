@@ -2,13 +2,12 @@
 Unit tests for the Portfolio aggregate root.
 Ensures correct vectorized translations of signals to equity curve.
 """
-import pytest
-import pandas as pd
 import numpy as np
 import numpy.testing as npt
+import pandas as pd
 
-from src.core.Portfolio import Portfolio
 from src.core.IFrictionModel import IFrictionModel
+from src.core.Portfolio import Portfolio
 
 
 class DummyZeroFriction(IFrictionModel):

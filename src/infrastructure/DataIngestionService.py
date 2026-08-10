@@ -1,7 +1,7 @@
 """
 Service layer for coordinating data ingestion, applying Dependency Inversion Principle (DIP).
 """
-from typing import List
+
 from src.infrastructure.IDataHandler import IDataHandler
 from src.infrastructure.IDataWriter import IDataWriter
 
@@ -23,7 +23,7 @@ class DataIngestionService:
         self._reader = reader
         self._writer = writer
 
-    def ingest(self, symbols: List[str]) -> None:
+    def ingest(self, symbols: list[str]) -> None:
         """
         Executes the ingestion pipeline for a list of symbols.
         

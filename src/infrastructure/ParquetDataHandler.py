@@ -2,7 +2,9 @@
 Adapter to load and save data from/to Parquet files.
 """
 import os
+
 import pandas as pd
+
 from src.infrastructure.IDataHandler import IDataHandler
 from src.infrastructure.IDataWriter import IDataWriter
 

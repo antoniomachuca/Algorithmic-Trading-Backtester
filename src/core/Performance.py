@@ -1,8 +1,8 @@
 """
 Performance calculation domain service.
 """
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 
 class Performance:

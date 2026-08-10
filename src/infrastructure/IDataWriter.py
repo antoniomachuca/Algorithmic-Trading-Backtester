@@ -2,6 +2,7 @@
 Port (Interface) for data writers.
 """
 from abc import ABC, abstractmethod
+
 import pandas as pd
 
 
@@ -20,4 +21,3 @@ class IDataWriter(ABC):
             data (pd.DataFrame): The vectorized time-series data to save.
             
         """
-        pass
