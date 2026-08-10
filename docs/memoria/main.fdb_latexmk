@@ -1,17 +1,17 @@
 # Fdb version 4
-["biber main"] 1781349220.30109 "main.bcf" "main.bbl" "main" 1786393871.89201 0
-  "main.bcf" 1786393871.722 108082 2d994da58f2543255fdea2300d4103b6 "pdflatex"
+["biber main"] 1781349220.30109 "main.bcf" "main.bbl" "main" 1786395017.1791 0
+  "main.bcf" 1786395016.68133 108082 2d994da58f2543255fdea2300d4103b6 "pdflatex"
   "references.bib" 1781220689.76365 532 5c2b1eb7d013dc488264ea37bfbab144 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1786393870.37848 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1786393871.89233 0
+["pdflatex"] 1786395012.04457 "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" "main.pdf" "main" 1786395017.18095 0
   "../architecture/activity_diagram.pdf" 1781218848.64362 32406 57e18659cbe5c421f063a8ac9ca4c293 ""
   "../architecture/class_diagram.pdf" 1781219010.36284 65147 ec3733664c84edb15d23fe905c0d4df4 ""
-  "../architecture/equity_curve.pdf" 1781350946.86291 24544 1327bd6e8380fa96388a4c6bbd368d08 ""
+  "../architecture/equity_curve.pdf" 1786394963.8948 94889 9d58f508130c8043436fab50a7e6bdf8 ""
   "../architecture/sequence_diagram.pdf" 1781218848.80617 22739 3d19921beda7629bfd81a27dd7962a4f ""
-  "../architecture/vectorization_benchmark.pdf" 1781314287.02235 25590 e78676e072882e1a5ac1c2c171e5560a ""
+  "../architecture/vectorization_benchmark.pdf" 1786395010.8364 25520 12a2cf7cc0557fbbbd8723b463a70cfb ""
   "/Users/antoniomachuca/Library/CloudStorage/GoogleDrive-71117kb@gmail.com/Mi unidad/CUARTO/VERANO/REPO 1/Algorithmic_Trading_Backtester/docs/memoria/main.tex" 1781220592.58399 1166 d2303248b9d394b1ef1603e44c10872d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -231,12 +231,12 @@
   "chapters/03_Architecture_Design.tex" 1786393869.86309 8855 eb0bf83c517e720af73f444a6e19abc3 ""
   "chapters/04_Implementation_Vectorization.tex" 1786393869.86348 9687 d9166f634d17f3df191b54ec33e551c9 ""
   "chapters/05_Results_Conclusions.tex" 1786393869.86226 4863 cbb96b308965c3813c16fb47330e95fb ""
-  "main.aux" 1786393871.71775 7119 09b99bf65fe67bb949da4951f582bdb8 "pdflatex"
+  "main.aux" 1786395016.66245 7119 09b99bf65fe67bb949da4951f582bdb8 "pdflatex"
   "main.bbl" 1781349229.58059 4083 bba174ed515663905ab6132bbd9538fe "biber main"
-  "main.out" 1786393871.71936 6303 707a1cae04103b9c94968bde0557f4ef "pdflatex"
-  "main.run.xml" 1786393871.72267 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.out" 1786395016.66959 6303 707a1cae04103b9c94968bde0557f4ef "pdflatex"
+  "main.run.xml" 1786395016.68427 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
   "main.tex" 1781220592.58399 1166 d2303248b9d394b1ef1603e44c10872d ""
-  "main.toc" 1786393871.72274 3057 0bbfb8803a6d35037891e85463f5383f "pdflatex"
+  "main.toc" 1786395016.68518 3057 0bbfb8803a6d35037891e85463f5383f "pdflatex"
   "srsdocument.cls" 1781130039.20894 8241 9ec858c4c30e50404a571e66bf0736dc ""
   (generated)
   "main.aux"

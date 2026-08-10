@@ -19,6 +19,9 @@ class MomentumStrategy(IStrategy):
         Args:
             period (int): The lookback period to calculate momentum.
         """
+        if period <= 0:
+            raise ValueError("Period must be a strictly positive integer.")
+            
         self._period = period
 
     def calculate_signals(self, data: pd.DataFrame) -> pd.Series:

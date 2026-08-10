@@ -20,6 +20,9 @@ class Portfolio:
             initial_capital (float): The starting capital in the base currency.
             friction_model (IFrictionModel): Injected friction model for cost calculation.
         """
+        if initial_capital <= 0:
+            raise ValueError("Initial capital must be strictly positive.")
+            
         self._initial_capital = initial_capital
         self._positions: pd.DataFrame = pd.DataFrame()
         self._equity_curve: pd.Series = pd.Series(dtype=float)
@@ -37,6 +40,11 @@ class Portfolio:
             Time: O(N) asymptotically via pandas vectorization.
             Space: O(N) where N is the length of the time series.
         """
+        if not signals.index.equals(prices.index):
+            raise ValueError("Signals index and prices index must be perfectly aligned.")
+        if prices.empty:
+            raise ValueError("Prices DataFrame cannot be empty.")
+            
         returns = prices['close'].pct_change()
         
         # Shift signals by 1 to prevent look-ahead bias (trade at tomorrow's open based on today's close signal)

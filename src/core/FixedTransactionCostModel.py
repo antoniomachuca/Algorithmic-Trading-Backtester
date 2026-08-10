@@ -21,7 +21,7 @@ class FixedTransactionCostModel(IFrictionModel):
         self._fixed_amount = fixed_amount
 
     def calculate_friction(self, prices: pd.DataFrame, signals: pd.Series) -> pd.Series:
-        """
+        r"""
         Calculates the friction costs vectorially using fixed amounts relative to the asset price.
         
         Mathematical Formulation: \(C_t = |S_{t-1} - S_{t-2}| \times \frac{c_{fixed}}{P_t}\)

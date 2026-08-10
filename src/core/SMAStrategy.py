@@ -20,6 +20,11 @@ class SMAStrategy(IStrategy):
             short_window (int): The lookback period for the short moving average.
             long_window (int): The lookback period for the long moving average.
         """
+        if short_window <= 0 or long_window <= 0:
+            raise ValueError("Window sizes must be strictly positive integers.")
+        if short_window >= long_window:
+            raise ValueError("short_window must be strictly less than long_window.")
+            
         self._short_window = short_window
         self._long_window = long_window
 

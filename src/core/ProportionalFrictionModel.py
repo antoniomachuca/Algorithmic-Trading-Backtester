@@ -22,7 +22,7 @@ class ProportionalFrictionModel(IFrictionModel):
         self._proportional_rate = proportional_rate
 
     def calculate_friction(self, prices: pd.DataFrame, signals: pd.Series) -> pd.Series:
-        """
+        r"""
         Calculates the friction costs vectorially using proportional rates.
         
         Mathematical Formulation: \(C_t = |S_{t-1} - S_{t-2}| \times c_{prop}\)
