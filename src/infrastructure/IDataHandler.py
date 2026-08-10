@@ -22,7 +22,7 @@ class IDataHandler(ABC):
             pd.DataFrame: A vectorized representation of the time-series data.
             
         Complexity:
-            Time: O(1) wrapper for highly optimized I/O operations.
+            Time: O(N) wrapper for highly optimized I/O operations.
             Space: O(N) memory allocation for the DataFrame.
         """
         pass

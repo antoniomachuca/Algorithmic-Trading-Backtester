@@ -36,7 +36,7 @@ class ProportionalFrictionModel(IFrictionModel):
             pd.Series[float]: Series representing the friction costs per period in percentage.
 
         Complexity:
-            Time: O(1) asymptotically via pandas vectorization.
+            Time: O(N) asymptotically via pandas vectorization.
             Space: O(N) array allocation.
         """
         # Shift signals by 1 to represent the actual held position

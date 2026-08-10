@@ -4,7 +4,7 @@
 Algorithmic trading requires processing vast amounts of historical market data. This project is motivated by the need for a robust, immutable, and highly efficient infrastructure that completely eliminates these procedural risks through strict mathematical vectorization.
 
 \section{Purpose and Objectives}
-The primary objective of this document is to detail the design and implementation of a high-performance backtesting engine. The central goal is to achieve an effective asymptotic time complexity of \(\mathcal{O}(1)\) for financial array operations. By strictly adhering to structured programming paradigms, avoiding loops and control flow interruptions, the engine ensures deterministic execution and scalable quantitative analysis.
+The primary objective of this document is to detail the design and implementation of a high-performance backtesting engine. The central goal is to achieve an effective asymptotic time complexity of \(\mathcal{O}(N)\) for financial array operations. By strictly adhering to structured programming paradigms, avoiding loops and control flow interruptions, the engine ensures deterministic execution and scalable quantitative analysis.
 
 \section{Scope}
 The scope of this software focuses exclusively on the execution and evaluation of trading algorithms. It enforces a clear separation of concerns: the core algorithmic and mathematical logic is securely encapsulated within the domain (\texttt{src/core/}), while all interactive data exploration, charting, and visual analyses are isolated in the presentation layer (\texttt{notebooks/}).

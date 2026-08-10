@@ -34,7 +34,7 @@ class Portfolio:
             prices (pd.DataFrame): Historical market prices.
 
         Complexity:
-            Time: O(1) asymptotically via pandas vectorization.
+            Time: O(N) asymptotically via pandas vectorization.
             Space: O(N) where N is the length of the time series.
         """
         returns = prices['close'].pct_change()
@@ -63,7 +63,7 @@ class Portfolio:
             pd.Series[float]: Time-series of portfolio equity.
             
         Complexity:
-            Time: O(1)
+            Time: O(N)
             Space: O(N) by reference
         """
         return self._equity_curve

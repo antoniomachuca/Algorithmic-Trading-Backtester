@@ -34,7 +34,7 @@ class SMAStrategy(IStrategy):
             pd.Series[int]: Vectorized trading signals (1, -1, or 0).
 
         Complexity:
-            Time: O(1) asymptotically via pandas vectorization (internally O(N)).
+            Time: O(N) asymptotically via pandas vectorization.
             Space: O(N) for rolling calculations and resulting Series.
         """
         close_prices = data['close']

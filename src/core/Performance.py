@@ -25,8 +25,8 @@ class Performance:
             float: The annualized Sharpe Ratio.
             
         Complexity:
-            Time: O(1) array operation.
-            Space: O(1) scalar aggregation.
+            Time: O(N) array operation.
+            Space: O(N) scalar aggregation.
         """
         excess_returns = returns - (risk_free_rate / 252.0)
         mean_excess_return = float(excess_returns.mean())
@@ -52,7 +52,7 @@ class Performance:
             float: The maximum drawdown percentage.
             
         Complexity:
-            Time: O(1) array rolling maximum.
+            Time: O(N) array rolling maximum.
             Space: O(N) temporary array allocation.
         """
         rolling_max = equity_curve.cummax()
@@ -73,8 +73,8 @@ class Performance:
             float: Annualized volatility.
             
         Complexity:
-            Time: O(1) vector operation.
-            Space: O(1) scalar aggregation.
+            Time: O(N) vector operation.
+            Space: O(N) scalar aggregation.
         """
         volatility = float(returns.std() * np.sqrt(252.0))
         return volatility
@@ -92,8 +92,8 @@ class Performance:
             float: The CAGR.
             
         Complexity:
-            Time: O(1)
-            Space: O(1)
+            Time: O(N)
+            Space: O(N)
         """
         if len(equity_curve) == 0:
             return 0.0

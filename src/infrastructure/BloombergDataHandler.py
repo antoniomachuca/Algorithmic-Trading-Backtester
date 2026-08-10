@@ -46,7 +46,7 @@ class BloombergDataHandler(IDataHandler):
             pd.DataFrame: The extracted historical data with standard column names.
             
         Complexity:
-            Time: Network-bound constant asymptotic overhead. O(1) local runtime.
+            Time: Network-bound constant asymptotic overhead. O(N) local runtime.
             Space: O(N) where N is the length of the time series.
         """
         # Fetching data directly to a pandas DataFrame purely vectorially via xbbg

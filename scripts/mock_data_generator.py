@@ -15,7 +15,7 @@ def generate_geometric_brownian_motion(
     Formula:
         S_t = S_{t-1} * exp((mu - sigma^2 / 2) * dt + sigma * sqrt(dt) * Z)
         
-    Algorithmic Complexity: O(1) for vectorized array operations.
+    Algorithmic Complexity: O(N) for vectorized array operations.
     
     Args:
         S0 (float): Initial price.
@@ -37,7 +37,7 @@ def create_mock_ohlcv() -> None:
     """
     Generates a mock OHLCV DataFrame using GBM and saves it to a Parquet file.
     
-    Algorithmic Complexity: O(1) vectorized pandas operations.
+    Algorithmic Complexity: O(N) vectorized pandas operations.
     """
     periods = 5000
     dates = pd.date_range(start="2010-01-01", periods=periods, freq="B")

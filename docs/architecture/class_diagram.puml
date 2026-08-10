@@ -141,6 +141,6 @@ end note
 note bottom of Portfolio
   **Strict Vectorization**
   State variables and returns are 
-  DataFrames for O(1) asymptotic complexity.
+  DataFrames for O(N) asymptotic complexity.
 end note
 @enduml

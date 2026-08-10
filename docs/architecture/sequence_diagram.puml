@@ -22,7 +22,7 @@ deactivate DataHandler
 
 Engine -> Strategy : calculate_signals(historical_data)
 activate Strategy
-note right of Strategy: Vectorized calculation\nO(1) asymptotic complexity
+note right of Strategy: Vectorized calculation\nO(N) asymptotic complexity
 Strategy --> Engine : Series (signals)
 deactivate Strategy
 

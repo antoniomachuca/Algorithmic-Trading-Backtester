@@ -35,7 +35,7 @@ class ParquetDataHandler(IDataHandler, IDataWriter):
             pd.DataFrame: The loaded data.
             
         Complexity:
-            Time: O(1) mapping to pandas native read.
+            Time: O(N) mapping to pandas native read.
             Space: O(N) where N is the length of the time series.
         """
         safe_name = symbol.replace(" ", "_").replace("/", "_")
@@ -54,8 +54,8 @@ class ParquetDataHandler(IDataHandler, IDataWriter):
             data (pd.DataFrame): The vectorized time-series data to save.
             
         Complexity:
-            Time: O(1) wrapper for highly optimized C-level Parquet write operations.
-            Space: O(1) auxiliary space.
+            Time: O(N) wrapper for highly optimized C-level Parquet write operations.
+            Space: O(N) auxiliary space.
         """
         if data.empty:
             return

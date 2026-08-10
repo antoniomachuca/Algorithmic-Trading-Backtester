@@ -32,7 +32,7 @@ class MomentumStrategy(IStrategy):
             pd.Series[int]: Vectorized trading signals.
 
         Complexity:
-            Time: O(1) asymptotically via pandas vectorization.
+            Time: O(N) asymptotically via pandas vectorization.
             Space: O(N) where N is the length of the time series.
         """
         close_prices = data['close']

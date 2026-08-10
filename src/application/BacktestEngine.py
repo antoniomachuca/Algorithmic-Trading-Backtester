@@ -34,7 +34,7 @@ class BacktestEngine:
             symbol (str): The financial instrument to backtest.
             
         Complexity:
-            Time: O(1) asymptotic execution of composed vectorized functions.
+            Time: O(N) asymptotic execution of composed vectorized functions.
             Space: O(N) scaling with the loaded dataset length.
         """
         # 1. Fetch data via the Port (IDataHandler)

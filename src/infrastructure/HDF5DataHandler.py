@@ -32,7 +32,7 @@ class HDF5DataHandler(IDataHandler, IDataWriter):
             pd.DataFrame: The loaded data.
             
         Complexity:
-            Time: O(1) mapping to pandas HDFStore native read.
+            Time: O(N) mapping to pandas HDFStore native read.
             Space: O(N) where N is the length of the time series.
         """
         try:
@@ -51,8 +51,8 @@ class HDF5DataHandler(IDataHandler, IDataWriter):
             data (pd.DataFrame): The vectorized time-series data to save.
             
         Complexity:
-            Time: O(1) wrapper for highly optimized C-level HDF5 write operations.
-            Space: O(1) auxiliary space (excluding the DataFrame).
+            Time: O(N) wrapper for highly optimized C-level HDF5 write operations.
+            Space: O(N) auxiliary space (excluding the DataFrame).
         """
         if data.empty:
             return

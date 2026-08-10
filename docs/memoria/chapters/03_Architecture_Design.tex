@@ -6,7 +6,7 @@ This chapter details the architectural design of the backtesting engine, justify
 
 The system adopts a \textit{Hexagonal Architecture} (Ports and Adapters) to ensure a strict separation of concerns. Following the Dependency Inversion Principle (DIP) of SOLID, the core computational domain does not depend on low-level implementation details (such as data file formats, databases, or external APIs), but rather on abstractions and generic interfaces.
 
-The \textit{Core Domain} exclusively encapsulates the pure financial logic and the vectorized mathematical operations with an asymptotic time complexity of \(\mathcal{O}(1)\). All data ingestion and storage are handled through the \textit{Data Infrastructure}, coupling to the central domain via well-defined ports (such as \texttt{IDataHandler}). This guarantees that the engine can switch between reading data from HDF5 files, Parquet, or a Bloomberg API without modifying a single line of predictive logic.
+The \textit{Core Domain} exclusively encapsulates the pure financial logic and the vectorized mathematical operations with an asymptotic time complexity of \(\mathcal{O}(N)\). All data ingestion and storage are handled through the \textit{Data Infrastructure}, coupling to the central domain via well-defined ports (such as \texttt{IDataHandler}). This guarantees that the engine can switch between reading data from HDF5 files, Parquet, or a Bloomberg API without modifying a single line of predictive logic.
 
 \section{UML Class Design and Structural Justification}
 
@@ -62,7 +62,7 @@ The flow is initiated by the user and delegated to the \texttt{BacktestEngine}. 
 
 \section{Vectorized Activity Pipeline}
 
-To comply with the strict computational complexity requirement of \(\mathcal{O}(1)\) over massive financial arrays (avoiding any imperative \texttt{for} or \texttt{while} loops), the core of the \texttt{Portfolio} is designed as a purely mathematical conduit. Figure \ref{fig:activity_diagram} details this pipeline.
+To comply with the strict computational complexity requirement of \(\mathcal{O}(N)\) over massive financial arrays (avoiding any imperative \texttt{for} or \texttt{while} loops), the core of the \texttt{Portfolio} is designed as a purely mathematical conduit. Figure \ref{fig:activity_diagram} details this pipeline.
 
 \begin{figuresrs}
     \centering

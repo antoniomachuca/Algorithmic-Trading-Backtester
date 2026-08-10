@@ -35,7 +35,7 @@ class TestPortfolio:
     def test_update_from_signals_frictionless(self) -> None:
         """
         Validates equity calculation without transaction costs.
-        Ensures O(1) vectorized logic equals theoretical expectation.
+        Ensures O(N) vectorized logic equals theoretical expectation.
         """
         initial_capital = 100.0
         portfolio = Portfolio(initial_capital, DummyZeroFriction())
